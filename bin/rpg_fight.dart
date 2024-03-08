@@ -5,7 +5,7 @@ import 'player_set.dart';
 import 'func_geral.dart';
 import 'dart:io';
 
-void main() {
+void main() async {
   print('///////////////////////////////////////////////////// \n'
       '////////////Tabulheiro de Cartas Mágicas/////////////\n'
       'Nick Name Player: ');
@@ -35,6 +35,10 @@ void main() {
   var cenar = funcCenario();
   var decks0 = criarPlayer.deckPlayer;
   var decks1 = criarPlayer2.deckPlayer;
+  bool retornarMenu = true;
+  var exitAction = await Future.delayed(Duration(seconds:2));
+   
+  
   
 
 
@@ -55,24 +59,54 @@ void main() {
 
   print('****** Novos valores de Força Foram atualizados ****** \n'
         '--- $cenar ---- \n ');
-  criarPlayer.mostrarCartas();
+ // criarPlayer.mostrarCartas();
   SetCenario ladodaMesa = SetCenario();
   SetCenario ladodaMesa1 = SetCenario();
 
-while (vida! > 0) {
-  print('Escolha sua carta!');
-  String? escolha = stdin.readLineSync();
-  var escolha1 = int.parse('$escolha');
-  ladodaMesa.selecionarCarta(decks0, escolha1-1);
-  criarPlayer.mostrarCartas();
- // Random jogador2 = Random();
- // var cartaJogador2 = jogador2.nextInt(decks1.length);
- // ladodaMesa1.selecionarCarta(decks1, cartaJogador2);
+  while (vida! > 0) {
+    ////////////////////////////////////////////////////////////
+    /// Menu Principal para a escolha de ação ao Jogardo 1
+    //////////////////////////////////////////////////////////// 
+    print('////////////// Escolha uma Ação //////////////\n'  //
+          '1 - Escolher Carta na mão \n'                     //
+          '2 - Olhar Cartas na mão \n'                        //
+          '3 - Olhar Cartas no Cenário \n'                    //  
+          '4 - Atacar uma Carta no Cenário \n');              //
+    ////////////////////////////////////////////////////////////
+    
+    exitAction;
+    String? acaoEscolha = stdin.readLineSync();
+    var acaoEscolha1 = int.parse('$acaoEscolha');
+    exitAction;
+    switch (acaoEscolha1) {
+      case 1:
+        while (retornarMenu == true) {
+        print('Escolha sua carta!');
+        String? escolha = stdin.readLineSync();
+        var escolha1 = int.parse('$escolha');
+        ladodaMesa.selecionarCarta(decks0, escolha1-1);
+        
+        print('Jogador 2 Escolhendo Carta....');
+        await Future.delayed(Duration(seconds:5));
+           Random jogador2 = Random();
+           var cartaJogador2 = jogador2.nextInt(decks1.length);
+           ladodaMesa1.selecionarCarta(decks1, cartaJogador2);
+        retornarMenu = false;
+        }
+      case 2:
+        criarPlayer.mostrarCartas();
+        exitAction;
+      case 3:
+        print(ladodaMesa.cenarioAtivo);
+        exitAction;
 
+        break;
+      default:
+    }
   
   
 
-}
+  }
 
 
 //////////////////////////////////////////////////////////////////////////////////

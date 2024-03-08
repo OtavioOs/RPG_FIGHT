@@ -63,11 +63,12 @@ class PlayerInfo extends CartasdeBaralho {
       var forcaMonstro = deckPlayer[i][1][0];
       var defesaMonstro = deckPlayer[i][1][1];
       var elementoMonstro = deckPlayer[i][1][2];
-      print('\n Carta Nº ${i + 1}'
+      print('////////////////\n Carta Nº ${i + 1}'
           '\n$nomeMonstro \n'
           'Força: $forcaMonstro \n'
           'Defesa: $defesaMonstro \n'
-          'Elemento: $elementoMonstro\n //');
+          'Elemento: $elementoMonstro\n////////////////');
+          
     }
   }
 
