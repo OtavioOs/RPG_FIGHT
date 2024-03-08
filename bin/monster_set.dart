@@ -12,14 +12,14 @@ import 'dart:math';
   List<dynamic> mistura(int cartMonster){
     var random = Random();
     List<dynamic> deckEnd = [];
-for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < 3; i++) {
   var valor = random.nextInt(_monsters.length);
   deckEnd.add(_monsters[valor]);
-}
-for (var i = 0; i < 2; i++) {
+  }
+  for (var i = 0; i < 2; i++) {
   var valor = random.nextInt(_monsters.length);
   deckEnd.add(_magics[valor]);
-}
+  }
     return deckEnd.take(cartMonster).toList();
   }
 
@@ -216,4 +216,5 @@ class CartasdeBaralho {
       retornoMao.add(cartMob);
     return retornoMao;
   }
+
 }

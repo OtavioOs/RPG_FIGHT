@@ -64,9 +64,10 @@ while (vida! > 0) {
   String? escolha = stdin.readLineSync();
   var escolha1 = int.parse('$escolha');
   ladodaMesa.selecionarCarta(decks0, escolha1-1);
-  Random jogador2 = Random();
-  var cartaJogador2 = jogador2.nextInt(decks1.length);
-  ladodaMesa1.selecionarCarta(decks1, cartaJogador2);
+  criarPlayer.mostrarCartas();
+ // Random jogador2 = Random();
+ // var cartaJogador2 = jogador2.nextInt(decks1.length);
+ // ladodaMesa1.selecionarCarta(decks1, cartaJogador2);
 
   
   

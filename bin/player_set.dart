@@ -43,7 +43,6 @@ import 'monster_set.dart';
   }
 }*/
 
-
 class PlayerInfo extends CartasdeBaralho {
   String? nickName;
   int? heart;
@@ -59,12 +58,12 @@ class PlayerInfo extends CartasdeBaralho {
   }
 
   mostrarCartas() {
-  for (var i = 0; i < 5; i++) {
-    var nomeMonstro = deckPlayer[i][0];
-    var forcaMonstro = deckPlayer[i][1][0];
-    var defesaMonstro = deckPlayer[i][1][1];
-    var elementoMonstro = deckPlayer[i][1][2];
-    print('\n Carta Nº ${i + 1}'
+    for (var i = 0; i < deckPlayer.length; i++) {
+      var nomeMonstro = deckPlayer[i][0];
+      var forcaMonstro = deckPlayer[i][1][0];
+      var defesaMonstro = deckPlayer[i][1][1];
+      var elementoMonstro = deckPlayer[i][1][2];
+      print('\n Carta Nº ${i + 1}'
           '\n$nomeMonstro \n'
           'Força: $forcaMonstro \n'
           'Defesa: $defesaMonstro \n'
@@ -72,18 +71,24 @@ class PlayerInfo extends CartasdeBaralho {
     }
   }
 
-  mostrarCenario(var cartasCenario){
+  mostrarCenario(var cartasCenario) {
     for (var i = 0; i < cartasCenario.length; i++) {
       var nomeMonstro = cartasCenario[i][0];
       var forcaMonstro = cartasCenario[i][1][0];
       var defesaMonstro = cartasCenario[i][1][1];
       var elementoMonstro = cartasCenario[i][1][2];
       print('\n Carta Nº ${i + 1}'
-            '\n$nomeMonstro \n'
-            'Força: $forcaMonstro \n'
-            'Defesa: $defesaMonstro \n'
-            'Elemento: $elementoMonstro\n //');
+          '\n$nomeMonstro \n'
+          'Força: $forcaMonstro \n'
+          'Defesa: $defesaMonstro \n'
+          'Elemento: $elementoMonstro\n //');
     }
   }
-}
 
+  removerCarta(List deck,int cartaSelect){
+    deck.removeAt(cartaSelect);
+    
+  }
+
+
+}
