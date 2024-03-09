@@ -29,6 +29,7 @@ void main() async {
 ///     ~~~ cenar = funcCcenatio Vai gerar o Campo de
 ///         Batalha
 //////////////////////////////////////////////////////////
+
   var vida = criarPlayer.heart;
   var defesa = criarPlayer.shild;
   var nome = criarPlayer.nickName;
@@ -37,10 +38,6 @@ void main() async {
   var decks1 = criarPlayer2.deckPlayer;
   bool retornarMenu = true;
   var exitAction = await Future.delayed(Duration(seconds:2));
-   
-  
-  
-
 
 //////////////////////////////////////////////////////////
 ///     ~~~Função "verificElement", está enviando:
@@ -97,8 +94,13 @@ void main() async {
         criarPlayer.mostrarCartas();
         exitAction;
       case 3:
-        print(ladodaMesa.cenarioAtivo);
+        print('Seu lado do Cenário: ${criarPlayer.mostrarCenario(ladodaMesa.cenarioAtivo)}'
+              'Lado do oponente no Cenário ${criarPlayer.mostrarCenario(ladodaMesa1.cenarioAtivo)}');
+
         exitAction;
+      
+      case 4: 
+
 
         break;
       default:
