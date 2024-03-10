@@ -4,3 +4,10 @@ Att. Feito o comando "git pull origin main" consegui puxar do git.
 
 
 Tentando outra vez
+
+
+Para levar ate o repositorio
+
+git add .
+git commit -m "Resolva conflitos"
+git push origin main

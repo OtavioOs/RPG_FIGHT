@@ -1,10 +1,7 @@
-abstract class InteracaoListas{
-
-
+abstract class InteracaoListas {
   InteracaoListas();
 
-  visualisarCenario(List cartasEmCenario, String jogador){
-
+  visualisarCenario(List cartasEmCenario, String jogador) {
     for (var i = 0; i < cartasEmCenario.length; i++) {
       var nomeMonstro = cartasEmCenario[i][0];
       var forcaMonstro = cartasEmCenario[i][1][0];
@@ -12,12 +9,11 @@ abstract class InteracaoListas{
       var elementoMonstro = cartasEmCenario[i][1][2];
 
       print('Cartas no lado do $jogador \n'
-            'Carta Nº ${i+1} \n'
-            'Nome: $nomeMonstro\n'
-            'Força: $forcaMonstro \n'
-            'Defesa: $defesaMonstro \n'
-            'Elemento: $elementoMonstro \n');
+          'Carta Nº ${i + 1} \n'
+          'Nome: $nomeMonstro\n'
+          'Força: $forcaMonstro \n'
+          'Defesa: $defesaMonstro \n'
+          'Elemento: $elementoMonstro \n');
     }
-
   }
 }

@@ -7,33 +7,20 @@ class SetCenario extends PlayerInfo {
 
   SetCenario();
 
-  selecionarCarta(List baralho, var entreTodos) {
-    if (rodada <= 0) {
-      cenarioAtivo.add(baralho[entreTodos]);
-      rodada += 1;
-
-      print('Carta escolhida... ${baralho[entreTodos][0]} \n'
-          'Seu lado da mesa contém a carta \n'
-           'Nome: ${cenarioAtivo[0][0]}');
-
-      removerCarta(baralho, entreTodos);
-      
-
-    } else {
-
-      cenarioAtivo.add(baralho[entreTodos]);
-      rodada += 1;
-
-      print('Carta escolhida... ${baralho[entreTodos][0]} \n'
-        'Seu lado da mesa contém as cartas');
-      for (var i = 0; i < cenarioAtivo.length; i++) {
-         print('Nome: ${cenarioAtivo[i][0]}');
-         
-         
-      }
-
-      removerCarta(baralho, entreTodos);
-      //mostrarCenario(cenarioAtivo);
+  mostrarEscolha() {
+    var quantidadeBaralho = cenarioAtivo.length + 1;
+    if (quantidadeBaralho >= 0) {
+      print('///Carta escolhida///\n'
+          'Nome: ${cenarioAtivo[0][0]}\n'
+          'Força: ${cenarioAtivo[0][1][0]}\n'
+          'Defesa: ${cenarioAtivo[0][1][2]}\n'
+          'Elemento: ${cenarioAtivo}');
     }
+  }
+
+  selecionarCarta(List baralho, var entreTodos) {
+    cenarioAtivo.add(baralho[entreTodos]);
+
+    removerCarta(baralho, entreTodos);
   }
 }
