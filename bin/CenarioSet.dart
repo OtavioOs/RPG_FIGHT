@@ -8,13 +8,13 @@ class SetCenario extends PlayerInfo {
   SetCenario();
 
   mostrarEscolha() {
-    var quantidadeBaralho = cenarioAtivo.length + 1;
+    var quantidadeBaralho = cenarioAtivo.length;
     if (quantidadeBaralho >= 0) {
       print('///Carta escolhida///\n'
-          'Nome: ${cenarioAtivo[0][0]}\n'
-          'Força: ${cenarioAtivo[0][1][0]}\n'
-          'Defesa: ${cenarioAtivo[0][1][2]}\n'
-          'Elemento: ${cenarioAtivo}');
+          'Nome: ${cenarioAtivo[rodada][0]}\n'
+          'Força: ${cenarioAtivo[rodada][1][0]}\n'
+          'Defesa: ${cenarioAtivo[rodada][1][2]}\n');
+      rodada++;
     }
   }
 
