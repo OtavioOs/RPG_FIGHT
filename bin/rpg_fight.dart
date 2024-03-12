@@ -62,7 +62,13 @@ void main() async {
   SetCenario ladodaMesa1 = SetCenario();
 
 //VERIFICAR O PORQUE NÃO ESTÁ PARANDO COM O MENU AO CHEGAR A 0 DE VIDA.
-
+  print('                 ████████  ████████  ████████');
+  print('                 ██    ██  ██    ██  ██');
+  print('                 ██    ██  ██    ██  ██');
+  print('                 ████████  ████████  ██  ████');
+  print('                 ██  ██    ██        ██    ██');
+  print('                 ██   ██   ██        ██    ██');
+  print('                 ██    ██  ██        ████████');
   while (true) {
     ////////////////////////////////////////////////////////////
     /// Menu Principal para a escolha de ação ao Jogardo 1
