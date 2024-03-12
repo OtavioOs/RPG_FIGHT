@@ -31,6 +31,8 @@ void main() async {
 
   var vida = criarPlayer.heart;
   var defesa = criarPlayer.shild;
+  var vida2 = criarPlayer2.heart;
+  var defesa2 = criarPlayer2.shild;
   var nome = criarPlayer.nickName;
   var cenar = funcCenario();
   var decks0 = criarPlayer.deckPlayer;
@@ -59,7 +61,9 @@ void main() async {
   SetCenario ladodaMesa = SetCenario();
   SetCenario ladodaMesa1 = SetCenario();
 
-  while (vida! > 0) {
+//VERIFICAR O PORQUE NÃO ESTÁ PARANDO COM O MENU AO CHEGAR A 0 DE VIDA.
+
+  while (vida! >= 0 || vida2! >= 0) {
     ////////////////////////////////////////////////////////////
     /// Menu Principal para a escolha de ação ao Jogardo 1
     ////////////////////////////////////////////////////////////
@@ -101,18 +105,27 @@ void main() async {
         exitAction;
       case 4:
         print('Esolha sua carta para Atacar, e selecione a Carta do Oponente.\n'
-              'Sua Carta: ');
+            'Sua Carta: ');
         String? cartaAtaque = stdin.readLineSync();
         int cartaAtaque1 = int.parse('$cartaAtaque');
-        print('Escolha a Cartado Oponente: \n'
-              'Carta Oponente: ');
+        print('Escolha a Carta do Oponente: \n'
+            'Carta Oponente: ');
         String? cartaSofre = stdin.readLineSync();
         int cartaSofre1 = int.parse('$cartaSofre');
         print('${cartaAtaque1.runtimeType}');
 
         ////RESOLVER LINHA SEGUINTE, DIZ NAO SER INT NO METODO ATACARCART EM CENARIO
-        ladodaMesa.atacarCarta('jogardo1', decks0, decks1, cartaAtaque1, cartaSofre1);
-        
+        vida2 = ladodaMesa.atacarCarta(
+            'jogardo1',
+            ladodaMesa.cenarioAtivo,
+            ladodaMesa1.cenarioAtivo,
+            cartaAtaque1,
+            cartaSofre1,
+            vida,
+            defesa,
+            vida2,
+            defesa2);
+
         break;
       default:
     }
