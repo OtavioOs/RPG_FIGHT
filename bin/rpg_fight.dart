@@ -96,13 +96,23 @@ void main() async {
         criarPlayer.mostrarCartas();
         exitAction;
       case 3:
-        print(
-            'Seu lado do Cenário: ${criarPlayer.mostrarCenario(ladodaMesa.cenarioAtivo)}'
-            'Lado do oponente no Cenário ${criarPlayer.mostrarCenario(ladodaMesa1.cenarioAtivo)}');
-
+        criarPlayer.mostrarCenario(ladodaMesa.cenarioAtivo);
+        criarPlayer.mostrarCenario(ladodaMesa1.cenarioAtivo);
         exitAction;
-
       case 4:
+        print('Esolha sua carta para Atacar, e selecione a Carta do Oponente.\n'
+              'Sua Carta: ');
+        String? cartaAtaque = stdin.readLineSync();
+        int cartaAtaque1 = int.parse('$cartaAtaque');
+        print('Escolha a Cartado Oponente: \n'
+              'Carta Oponente: ');
+        String? cartaSofre = stdin.readLineSync();
+        int cartaSofre1 = int.parse('$cartaSofre');
+        print('${cartaAtaque1.runtimeType}');
+
+        ////RESOLVER LINHA SEGUINTE, DIZ NAO SER INT NO METODO ATACARCART EM CENARIO
+        ladodaMesa.atacarCarta('jogardo1', decks0, decks1, cartaAtaque1, cartaSofre1);
+        
         break;
       default:
     }

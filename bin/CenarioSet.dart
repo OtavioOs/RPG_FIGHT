@@ -23,4 +23,17 @@ class SetCenario extends PlayerInfo {
 
     removerCarta(baralho, entreTodos);
   }
+
+  atacarCarta(var jogadorVez, List deckMao, List deckOponente, int cartaMao, int cartaOponente){
+    int forca1 = deckMao[cartaMao-1][1][0];
+    int forca2 = deckOponente[cartaOponente-1][1][2];
+    if (forca1 > forca2) {
+      print('Carta ${deckMao[cartaMao-1][0]} tem Maior força de Ataque.');
+      
+    }else{
+      print('Não tem força o suficiente para matar');
+
+    }
+
+  }
 }
