@@ -11,3 +11,6 @@ Para levar ate o repositorio
 git add .
 git commit -m "Resolva conflitos"
 git push origin main
+
+
+mandando teste de push

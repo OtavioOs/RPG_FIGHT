@@ -1,6 +1,8 @@
+import 'abstract_class.dart';
 import 'player_set.dart';
+import 'dart:io';
 
-class SetCenario extends PlayerInfo {
+class SetCenario extends PlayerInfo implements InteracaoListas{
   var cenarioAtivo = [];
   String? cartarRetorno;
   int rodada = 0;
@@ -28,7 +30,6 @@ class SetCenario extends PlayerInfo {
       int cartaOponente, int heart1, int? shild1, int? heart2, int? shild2) {
     int forca1 = deckMao[cartaMao - 1][1][0];
     int forca2 = deckOponente[cartaOponente - 1][1][0];
-    int? vida2 = heart2;
     print('Vida player1: $heart1, Defesa: $shild1 \n'
         'Vida player2: $heart2 , Defesa: $shild2');
 
@@ -42,5 +43,28 @@ class SetCenario extends PlayerInfo {
     } else {
       print('Não tem força o suficiente para matar');
     }
+  }
+
+  @override
+  visualisarCenario(List cartasEmCenario, String jogador) {
+    // TODO: implement visualisarCenario
+    throw UnimplementedError();
+  }
+
+  @override
+  navPlayer() {
+        print('////////////// Escolha uma Ação //////////////\n' //
+        '1 - Escolher Carta na mão \n' //
+        '2 - Olhar Cartas na mão \n' //
+        '3 - Olhar Cartas no Cenário \n' //
+        '4 - Atacar uma Carta no Cenário \n'
+        '5 - Sair'); //
+    ////////////////////////////////////////////////////////////
+
+    String? acaoEscolha = stdin.readLineSync();
+    //int acaoEscolha1 = int.parse('$acaoEscolha');
+
+    return acaoEscolha;
+    
   }
 }

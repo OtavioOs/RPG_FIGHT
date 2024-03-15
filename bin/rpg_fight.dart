@@ -11,7 +11,6 @@ void main() async {
   ///     ~~~ Nesse caso é enviado a PlayerInfo o nome
   ///     ~~~ Proxima linha Mostra as cartas com Método
   ///         de Organização das cartas e Listagem
-
   PlayerInfo criarPlayer = PlayerInfo();
   PlayerInfo criarPlayer2 = PlayerInfo();
   SetCenario ladodaMesa = SetCenario();
@@ -28,7 +27,7 @@ void main() async {
   print('                 ██    ██  ██        ████████');
 
   print('     ///////////////////////////////////////////////////// \n'
-      '    ////////////Tabulheiro de Cartas Mágicas/////////////');
+      '    ////////////Tabuleiro de Cartas Mágicas/////////////');
   print('                     Nick Name Player: ');
   nickName = stdin.readLineSync();
   print('                Distribuindo cartas ao Jogar.');
@@ -70,21 +69,22 @@ void main() async {
       '                --- $cenar ---- \n ');
 
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\\
+  
 
   while (nav1 == true && vida2! > 0) {
     ////////////////////////////////////////////////////////////
     /// Menu Principal para a escolha de ação ao Jogardo 1
     ////////////////////////////////////////////////////////////
-    print('////////////// Escolha uma Ação //////////////\n' //
+    /*print('////////////// Escolha uma Ação //////////////\n' //
         '           1 - Escolher Carta na mão \n' //
         '           2 - Olhar Cartas na mão \n' //
         '           3 - Olhar Cartas no Cenário \n' //
         '           4 - Atacar uma Carta no Cenário \n'
-        '           5 - Sair \n'); //
+        '           5 - Sair \n'); // */
     ////////////////////////////////////////////////////////////
-
+    var acaoEscolha = ladodaMesa.navPlayer();
     exitAction;
-    String? acaoEscolha = stdin.readLineSync();
+    //String? acaoEscolha = stdin.readLineSync();
 
     if (acaoEscolha == null || acaoEscolha.isEmpty) {
       print('Escolha uma opçao!');

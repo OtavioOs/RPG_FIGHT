@@ -1,3 +1,5 @@
+import 'dart:io';
+
 abstract class InteracaoListas {
   InteracaoListas();
 
@@ -16,4 +18,12 @@ abstract class InteracaoListas {
           'Elemento: $elementoMonstro \n');
     }
   }
+
+  navPlayer() {
+  }
+
+
+
+
+
 }
