@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'CenarioSet.dart';
 import 'player_set.dart';
 import 'func_geral.dart';
@@ -15,7 +14,7 @@ void main() async {
   PlayerInfo criarPlayer2 = PlayerInfo();
   SetCenario ladodaMesa = SetCenario();
   SetCenario ladodaMesa1 = SetCenario();
-  String? nickName;
+  final String? nickName;
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||\\
 
   print('                 ████████  ████████  ████████');
@@ -46,7 +45,7 @@ void main() async {
   var defesa = criarPlayer.shild;
   var vida2 = criarPlayer2.heart;
   var defesa2 = criarPlayer2.shild;
-  var nome = criarPlayer.nickName;
+  //var nome = criarPlayer.nickName;
   var cenar = funcCenario();
   var decks0 = criarPlayer.deckPlayer;
   var decks1 = criarPlayer2.deckPlayer;
@@ -69,19 +68,8 @@ void main() async {
       '                --- $cenar ---- \n ');
 
 //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\\
-  
 
   while (nav1 == true && vida2! > 0) {
-    ////////////////////////////////////////////////////////////
-    /// Menu Principal para a escolha de ação ao Jogardo 1
-    ////////////////////////////////////////////////////////////
-    /*print('////////////// Escolha uma Ação //////////////\n' //
-        '           1 - Escolher Carta na mão \n' //
-        '           2 - Olhar Cartas na mão \n' //
-        '           3 - Olhar Cartas no Cenário \n' //
-        '           4 - Atacar uma Carta no Cenário \n'
-        '           5 - Sair \n'); // */
-    ////////////////////////////////////////////////////////////
     var acaoEscolha = ladodaMesa.navPlayer();
     exitAction;
     //String? acaoEscolha = stdin.readLineSync();

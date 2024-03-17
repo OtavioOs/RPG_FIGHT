@@ -53,16 +53,15 @@ class SetCenario extends PlayerInfo implements InteracaoListas{
 
   @override
   navPlayer() {
-        print('////////////// Escolha uma Ação //////////////\n' //
-        '1 - Escolher Carta na mão \n' //
-        '2 - Olhar Cartas na mão \n' //
-        '3 - Olhar Cartas no Cenário \n' //
-        '4 - Atacar uma Carta no Cenário \n'
-        '5 - Sair'); //
-    ////////////////////////////////////////////////////////////
+        print('////////////// Escolha uma Ação //////////////\n'
+        '           1 - Escolher Carta na mão \n' 
+        '           2 - Olhar Cartas na mão \n' 
+        '           3 - Olhar Cartas no Cenário \n' 
+        '           4 - Atacar uma Carta no Cenário \n'
+        '           5 - Sair'); 
+    
 
     String? acaoEscolha = stdin.readLineSync();
-    //int acaoEscolha1 = int.parse('$acaoEscolha');
 
     return acaoEscolha;
     
