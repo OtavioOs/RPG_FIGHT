@@ -31,9 +31,14 @@ class BancodeDados {
   }
 
   get viewEvery{
-    for (var nome in _banco.keys) {
+    /*for (var nome in _banco.keys) {
       print(nome);
-    }
+    }*/
+
+    _banco.forEach((key, value) {
+      print('Nome: $key');
+    });
+
   }
 
   viewKey(String nome){
@@ -72,7 +77,6 @@ void main() {
           String? email = stdin.readLineSync();
           List<dynamic> valores = [idade, altura, '$email'];
           banco.receberDados('$nome', valores);
-          print(banco.viewAllDB);
         case "2":
           print('Qual Nome');
           String? nome = stdin.readLineSync();
