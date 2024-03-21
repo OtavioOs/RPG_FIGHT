@@ -30,7 +30,13 @@ class BancodeDados {
     return _banco;
   }
 
-  visualizarDados(String nome){
+  get viewEvery{
+    for (var nome in _banco.keys) {
+      print(nome);
+    }
+  }
+
+  viewKey(String nome){
     String nomelow = nome.replaceFirst(nome[0], nome[0].toUpperCase());
     if (_banco[nomelow] == null) {
       print('Nada encontrado');
@@ -70,7 +76,9 @@ void main() {
         case "2":
           print('Qual Nome');
           String? nome = stdin.readLineSync();
-          banco.visualizarDados('$nome');
+          banco.viewKey('$nome');
+        case "3":
+          banco.viewEvery;
         break;
         default:
       }
