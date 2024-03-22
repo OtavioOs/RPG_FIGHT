@@ -3,6 +3,7 @@ import 'dart:io';
 class BancodeDados {
  
  static Map<String,dynamic> _banco = {};
+
   
 
   BancodeDados();
@@ -40,6 +41,22 @@ class BancodeDados {
     });
 
   }
+
+
+  changeKey(String nome, String novoNome){
+
+    if (_banco.containsKey(nome)) {
+      List<dynamic> recuperaValor = _banco[nome];
+      _banco.remove(nome);
+      _banco[novoNome] = recuperaValor;
+      print("Alterado Nome");
+    } else {
+      print('Nada alterado');
+    }
+    
+  }
+
+
 
   viewKey(String nome){
     String nomelow = nome.replaceFirst(nome[0], nome[0].toUpperCase());
@@ -83,6 +100,12 @@ void main() {
           banco.viewKey('$nome');
         case "3":
           banco.viewEvery;
+        case "4":
+          print('Qual nome Alterar');
+          String? nome = stdin.readLineSync();
+          print('Qual novo Nome');
+          String? newNome = stdin.readLineSync();
+          banco.changeKey('$nome', '$newNome');
         break;
         default:
       }
