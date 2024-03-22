@@ -46,10 +46,11 @@ class BancodeDados {
 
   changeKey(String nome, String novoNome){
     String nomelow = nome.replaceFirst(nome[0], nome[0].toUpperCase());
+    String nomelow1 = novoNome.replaceFirst(novoNome[0], novoNome[0].toUpperCase());
     if (_banco.containsKey(nomelow)) {
       List<dynamic> recuperaValor = _banco[nomelow];
       _banco.remove(nomelow);
-      _banco[novoNome] = recuperaValor;
+      _banco[nomelow1] = recuperaValor;
       print("Alterado Nome");
     } else {
       print('Nada alterado');
@@ -76,7 +77,7 @@ class BancodeDados {
 void main() {
   BancodeDados banco = BancodeDados();
   while (true) {
-    print('\n1 = Adicionar\n2 = Visualizar\n3 = Ver todos Nomes\n 4 = Alterar Nome');
+    print('\n1 = Adicionar\n2 = Visualizar\n3 = Ver todos Nomes\n4 = Alterar Nome');
     String? visualizar = stdin.readLineSync();
     if (visualizar == "") {
       break;
